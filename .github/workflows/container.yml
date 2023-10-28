@@ -22,4 +22,9 @@ jobs:
 
     - name: Push to registry
       run: docker push registry.digitalocean.com/containers/hello-fsharp:$(echo $GITHUB_SHA | head -c7)
- 
+
+    - name: Set up Kubctl
+      uses: matootie/dokube@v1.3.4
+      with:
+        clusterName: k8s-bergen
+        personalAccessToken: ${{ secrets.DIGITAL_OCEAN_TOKEN }}
