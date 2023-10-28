@@ -1,9 +1,5 @@
 apiVersion: apps/v1
 kind: Deployment
-uses: matootie/dokube@v1.3.4
-with:
-  clusterName: k8s-bergen
-  personalAccessToken: ${{ secrets.DIGITAL_OCEAN_TOKEN }}
 metadata:
   name: nginx-deployment
   labels:
